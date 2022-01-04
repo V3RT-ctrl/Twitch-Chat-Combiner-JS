@@ -1,0 +1,17 @@
+$base-color: rgb(46, 45, 45);
+
+body {
+    background-color: $base-color;
+    
+}
+
+.message{
+    font-size: small;
+    width: 500px;
+}
+
+.ChatBox {
+    display: flex;
+    width: 50%
+}
+

@@ -24,7 +24,7 @@ export default (props : any) => {
             }} />
         <input
             type = "submit"
-            value = ""
+            value = {props.TextValue ? props.TextValue : ""}
             >    
             </input>
         </form>

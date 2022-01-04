@@ -5,6 +5,7 @@ export default (props : any) => {
     const handleSubmit = (e : any) => {
         e.preventDefault();
         props.onSubmit(text)
+        console.log(text)
         //console.log(text)
         setText("")
         //console.log("Here we are! ")
@@ -18,6 +19,7 @@ export default (props : any) => {
             onChange={e => {
                 let message = (e.target.value)
                 setText(message)
+                props.onChange(message)
                 //console.log(text)
             }} />
         <input

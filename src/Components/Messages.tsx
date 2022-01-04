@@ -1,3 +1,4 @@
+import { channel } from "diagnostics_channel";
 import { useState, useEffect } from "react";
 const tmi = require("tmi.js");
 let id = 0
@@ -20,12 +21,15 @@ export default (props : any) => {
     
     useEffect(()=> {
         setChannels(props.channels)
+    }, [props.channels])
+
+    useEffect(() =>{
+        client.channels = channels
         client.connect();
         client.on('message', (channel:string, tags:any, message:string, self:any) => {
             console.log(`${tags['display-name']}: ${message}`);
     })
-        client.channels = channels
-    }, [props.channels])
+    }, [channels])
                         
     return (
         <>

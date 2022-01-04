@@ -5,13 +5,15 @@ export default function AddChannel(props:any){
     const [channel, setChannel] = useState("")
     const toggleButton = () => setToggle(!toggle)
     const handleSubmit = (text:any) => {
+        props.onSubmit(channel)
+    }
+
+    const handleChange = (text:string) => {
         setChannel(text)
-        console.log("Place 2")
-        props.onSubmit(text)
     }
     return (
     <div className="addChannel">
         <button id="toggleButton" onClick={toggleButton}/>
-        {toggle ? <TextBox text={channel} onSubmit={(text:any) => handleSubmit(text)}/> : <></>}
+        {toggle ? <TextBox text={channel} onChange={(e:any) => handleChange(e)} onSubmit={(text:any) => handleSubmit(text)}/> : <></>}
     </div>)
 }

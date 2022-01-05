@@ -4,12 +4,18 @@ body {
 
 .message {
   font-size: small;
-  width: 80%;
+  width: 500px;
 }
 
 .ChatBox {
   display: flex;
-  width: 80%;
+  width: 50%;
+  position: relative;
+  right: 35px;
+}
+
+ul {
+  list-style: none;
 }
 
 /*# sourceMappingURL=App.css.map */

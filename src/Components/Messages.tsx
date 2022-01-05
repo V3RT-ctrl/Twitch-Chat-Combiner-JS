@@ -26,6 +26,7 @@ export default (props : any) => {
                 message: message,
                 id: tempID
                 }
+            window.scrollTo(0,document.body.scrollHeight);
 
             setMessages(messages => [...messages, myObject])}
             }

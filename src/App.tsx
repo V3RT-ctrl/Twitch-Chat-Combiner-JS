@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import Chat from "./Components/Chat"
+import InputUsername from './Components/InputUsername';
+import SignIn from './Components/SignIn';
 
 function App() {
-  return (
-    <div className="App">
-      <Chat />
+  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [token, setToken] = useState("oauth:vaqih57s61q6rkttz9y6ah9nn5h1c4")
+  const URL = window.location.href
+  const [userName, setUserName] = useState("Vert_")
+  useEffect(() =>{
+    if (!URL.includes("access_token")) {}
+    else{
+      const index1:number = URL.indexOf("#") + 14
+      const index2 : number = URL.indexOf("&")
+      setToken(() => "oauth:" + URL.substring(index1, index2))
+      setIsSignedIn(true);
+    }
+  }, [])
+
+  useEffect(() => console.log(token), [token])
+  // This code is a little mid.
+  
+  if (!isSignedIn){
+    return <SignIn />
+  }
+/*  else if (!userName) {
+    return <InputUsername onSubmit={(e:string) => setUserName(e)}/>
+  }*/
+  else {
+    return (
+    <div className='container'>
+      <Chat userName={userName} token={token}/>
     </div>
-  );
+    )
+  }
 }
 
 export default App;

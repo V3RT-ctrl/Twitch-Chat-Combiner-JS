@@ -12,6 +12,11 @@ body {
 
 .ChatBox {
     display: flex;
-    width: 50%
+    width: 50%;
+    position:relative;
+    right: 35px;
 }
 
+ul {
+    list-style: none;
+}

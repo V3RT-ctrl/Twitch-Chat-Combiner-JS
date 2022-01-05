@@ -6,9 +6,9 @@ import SignIn from './Components/SignIn';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false)
-  const [token, setToken] = useState("oauth:vaqih57s61q6rkttz9y6ah9nn5h1c4")
+  const [token, setToken] = useState("")
   const URL = window.location.href
-  const [userName, setUserName] = useState("Vert_")
+  const [userName, setUserName] = useState("")
   useEffect(() =>{
     if (!URL.includes("access_token")) {}
     else{

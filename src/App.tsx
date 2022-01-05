@@ -15,7 +15,7 @@ function App() {
       const index1:number = URL.indexOf("#") + 14
       const index2 : number = URL.indexOf("&")
       setToken(() => "oauth:" + URL.substring(index1, index2))
-      setIsSignedIn(true);
+      setIsSignedIn(true);  
     }
   }, [])
 

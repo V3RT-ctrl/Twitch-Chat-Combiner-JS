@@ -18,7 +18,7 @@ export default (props:any) => {
         <>
         <div className="ChatBox">
             <Messages channels={channels}/>
-            <SendMessage token={props.token} userName={props.userName}/>
+            <SendMessage token={props.token} userName={props.userName} channels={channels}/>
         </div>
         <AddChannel onSubmit={(text:any) => handleNewChannel(text)}/>
         </>
